@@ -1,9 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[10]:
-
-
 from collections import deque
 
 moves = [[-1, 0], [1, 0], [0, -1], [0, 1]]
@@ -30,8 +24,9 @@ def valid_position(prev_position, position, rows):
             return False
     
     return True
-    
-with open('input-small.txt', encoding="utf-8") as f:
+
+# part 1 
+with open('input.txt', encoding="utf-8") as f:
     data = f.read()
     
     rows = data.splitlines()
@@ -68,37 +63,7 @@ with open('input-small.txt', encoding="utf-8") as f:
     
     
 
-
-# In[5]:
-
-
-from collections import deque
-
-moves = [[-1, 0], [1, 0], [0, -1], [0, 1]]
-
-def perform_move(start, move):
-    return [sum(val) for val in zip(start, move)]
-
-def valid_position(prev_position, position, rows):
-    [prev_row_index, prev_col_index] = prev_position
-    [row_index, col_index] = position
- 
-    if row_index < 0 or row_index >= len(rows):
-        return False
-    if col_index < 0 or col_index >= len(rows[0]):
-        return False
-    
-    prev_val = rows[prev_row_index][prev_col_index]
-    val = rows[row_index][col_index]
-    if ord(val) > ord(prev_val):
-        if (prev_val != 'S') and (ord(val) - ord(prev_val) > 1):
-            return False
-    if val == 'E':
-        if(ord('z') - ord(prev_val) > 1):
-            return False
-    
-    return True
-    
+# part 2
 with open('input.txt', encoding="utf-8") as f:
     data = f.read()
     
@@ -139,12 +104,3 @@ with open('input.txt', encoding="utf-8") as f:
                 visited.append(position)
     path_lengths.sort()
     print(path_lengths[0])
-
-    
-
-
-# In[ ]:
-
-
-
-
