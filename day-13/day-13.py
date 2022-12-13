@@ -1,8 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[22]:
-
 
 import json
 
@@ -47,17 +42,3 @@ with open('input.txt', encoding="utf-8") as f:
         if is_in_order(left, right):
             in_order_count += packet_index + 1
     print(in_order_count)
-    
-
-
-# In[23]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
